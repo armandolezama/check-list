@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.checkbox{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.work-text{
+    display: inline-block;
+}
+
+.work-finished{
+    display: inline-block;
+    color: red;
+}
