@@ -3,7 +3,6 @@ const subBtn = document.getElementById('put-work')
 const workText = document.getElementById('work-text')
 
 let worksIds = [];
-let checks = {};
 function addDelBtn(btn, id){
     document.getElementById(btn).addEventListener('click', ()=>{
         document.getElementById(id).remove()
