@@ -10,15 +10,17 @@ function addDelBtn(btn, id){
     })
 }
 
-// function changeGray(idCheck, idP){
-//     temp = document.getElementById(idCheck)
-//     text = document.getElementById(idP)
-//     temp.addEventListener('click'()=>{
-//         if (temp.checked) {
-            
-//         }
-//     })
-// }
+function changeGray(idCheck, idP){
+    document.getElementById(idP)
+
+    document.getElementById(idCheck).addEventListener('click', ()=>{
+        if (document.getElementById(idCheck).checked) {
+            document.getElementById(idP).className = 'work-finished'
+        } else{
+            document.getElementById(idP).className = 'work-text'
+        }
+    })
+}
 
 subBtn.addEventListener('click', ()=>{
     let newID = worksIds.length++
@@ -31,17 +33,8 @@ subBtn.addEventListener('click', ()=>{
     </div>`)
 
     addDelBtn(`${newID}Btn`, newID)
-    checks[`${newID}In`] = document.getElementById(`${newID}In`)
-    checks[`${newID}P`] = document.getElementById(`${newID}P`)
 
-    checks[`${newID}In`].addEventListener('click', ()=>{
-        if (checks[`${newID}In`].checked) {
-            checks[`${newID}P`].className = 'work-finished'
-        } else{
-            checks[`${newID}P`].className = 'work-text'
-        }
-    })
 
-    
+    changeGray(`${newID}In`, `${newID}P`)
 })
 
