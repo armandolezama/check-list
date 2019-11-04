@@ -1,39 +1,34 @@
-const list = document.getElementById('list')
-const subBtn = document.getElementById('put-work')
-const workText = document.getElementById('work-text')
+const list = document.getElementById('list');
+const subButton = document.getElementById('put-work');
+const workText = document.getElementById('work-text');
 
 let worksIds = [];
-function addDelBtn(btn, id){
-    document.getElementById(btn).addEventListener('click', ()=>{
-        document.getElementById(id).remove()
-    })
-}
 
-function changeGray(idCheck, idP){
-    document.getElementById(idP)
+const addDeleteButton = (button, id) => {
+    document.getElementById(button).addEventListener('click', () => {
+        document.getElementById(id).remove();
+    });
+};
 
-    document.getElementById(idCheck).addEventListener('click', ()=>{
-        if (document.getElementById(idCheck).checked) {
-            document.getElementById(idP).className = 'work-finished'
-        } else{
-            document.getElementById(idP).className = 'work-text'
-        }
-    })
-}
+const changeGray = (idCheck, idP) => {
+    const checkboxNode = document.getElementById(idCheck);
+    const pNode =  document.getElementById(idP);
+    checkboxNode.addEventListener('click', () => {
+        pNode.className = checkboxNode.checked ? 'work-finished': 'work-text';
+    });
+};
 
-subBtn.addEventListener('click', ()=>{
-    let newID = worksIds.length++
-    worksIds.push(newID)
+subButton.addEventListener('click', () => {
+    let newID = worksIds.length++;
+    worksIds.push(newID);
     list.insertAdjacentHTML('beforeend', 
     `<div id="${newID}">
         <button id="${newID}Btn">X</button>
         <p id="${newID}P" class="work-text">${workText.value}</p>
         <input id="${newID}In" class="checkbox" type="checkbox">
-    </div>`)
+    </div>`);
 
-    addDelBtn(`${newID}Btn`, newID)
-
-
-    changeGray(`${newID}In`, `${newID}P`)
+    addDeleteButton(`${newID}Btn`, newID);
+    changeGray(`${newID}In`, `${newID}P`);
 })
 

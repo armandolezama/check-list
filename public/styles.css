@@ -3,17 +3,17 @@
     padding: 0;
 }
 
-.checkbox{
+.checkbox {
     display: inline-block;
     width: 10px;
     height: 10px;
 }
 
-.work-text{
+.work-text {
     display: inline-block;
 }
 
-.work-finished{
+.work-finished {
     display: inline-block;
     color: red;
 }
